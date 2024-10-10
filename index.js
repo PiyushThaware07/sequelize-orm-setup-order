@@ -16,6 +16,14 @@ async function init() {
 
 
     app.get("/", function (req, res) { return res.send("server running") });
+    app.get('/user', async function (req, res) {
+        const result = await models.User.findAll();
+        return res.json({ status: "success", data: result });
+    })
+    app.post('/user', async function (req, res) {
+        const result = await models.User.create(req.body);
+        return res.json({ status: "success", data: result });
+    })
 
     try {
         await sequelize.authenticate();

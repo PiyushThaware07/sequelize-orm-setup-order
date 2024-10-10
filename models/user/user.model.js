@@ -7,7 +7,7 @@ module.exports = (sequelize, DataTypes) => {
         phone: DataTypes.STRING,
         password: DataTypes.STRING,
     }, {
-        tableName : "user",
+        tableName: "user",
         freezeTableName: true,
     });
 
